@@ -10,7 +10,7 @@ export default function CartPage() {
 
   if (cartItems.length === 0) {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-16 text-center">
+      <div className="max-w-6xl mx-auto px-6 py-16 text-center">
         <h1 className="text-2xl font-bold mb-4">Your Cart is Empty</h1>
         <p className="text-gray-500 mb-6">
           Looks like you haven&apos;t added anything to your cart yet.
@@ -26,7 +26,7 @@ export default function CartPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="max-w-6xl mx-auto px-6 py-8">
       <h1 className="text-2xl font-bold mb-6">Shopping Cart</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
