@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/context/CartContext";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +25,9 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} h-full`}>
       <body className="min-h-full flex flex-col font-sans">
         <CartProvider>
-          <Header />
+          <Suspense fallback={null}>
+            <Header />
+          </Suspense>
           <main className="flex-1">{children}</main>
           <Footer />
         </CartProvider>

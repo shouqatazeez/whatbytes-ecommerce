@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { products } from "@/data/products";
 import Sidebar from "@/components/Sidebar";
 import ProductGrid from "@/components/ProductGrid";
@@ -34,7 +35,9 @@ export default async function Home({
   return (
     <div className="max-w-6xl mx-auto px-4 py-6">
       <div className="flex flex-col lg:flex-row gap-5">
-        <Sidebar />
+        <Suspense fallback={null}>
+          <Sidebar />
+        </Suspense>
         <div className="flex-1">
           <h1 className="text-2xl font-bold mb-4">Product Listing</h1>
           <ProductGrid products={filteredProducts} />
