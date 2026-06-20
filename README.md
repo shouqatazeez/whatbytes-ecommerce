@@ -1,20 +1,23 @@
 # ShopNow - E-Commerce Product Listing
 
-A responsive e-commerce product listing application built with Next.js and Tailwind CSS.
+A responsive e-commerce product listing application built with Next.js and Tailwind CSS as part of the WhatBytes Frontend Developer assignment.
 
 ## Live Demo
 
-🔗 [Deployed on Vercel](https://your-deployment-url.vercel.app)
+🔗 **[https://whatbytes-ecommerce-zeta.vercel.app](https://whatbytes-ecommerce-zeta.vercel.app)**
 
 ## Features
 
-- Product listing with responsive grid (3 columns desktop, 2 tablet, 1 mobile)
-- Category and price filtering with URL-based state
-- Search functionality with string matching
-- Product detail pages with dynamic routing
-- Cart with add/remove/update quantity controls
+- Responsive product grid (3 columns desktop, 2 tablet, 1 mobile)
+- Category filtering with radio buttons
+- Price range filtering with slider and input
+- Real-time search with string matching
+- URL-based filters (shareable filtered views)
+- Product detail page with dynamic routing (`/product/[id]`)
+- Shopping cart with add, remove, and quantity controls
 - Cart state persisted in localStorage
-- Fully responsive design
+- Conditional rendering when no products match filters
+- Sticky navigation header
 
 ## Tech Stack
 
@@ -22,13 +25,21 @@ A responsive e-commerce product listing application built with Next.js and Tailw
 - **Styling:** Tailwind CSS
 - **Icons:** lucide-react
 - **State Management:** React Context API
+- **Persistence:** localStorage
 - **Language:** TypeScript
+- **Deployment:** Vercel
 
 ## Getting Started
 
 ```bash
+# Install dependencies
 npm install
+
+# Run development server
 npm run dev
+
+# Build for production
+npm run build
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -38,19 +49,28 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ```
 src/
 ├── app/
-│   ├── page.tsx              # Home page (product listing)
-│   ├── layout.tsx            # Root layout (header + footer)
-│   ├── product/[id]/page.tsx # Product detail page
-│   └── cart/page.tsx         # Cart page
+│   ├── page.tsx              # Home page with product listing and filters
+│   ├── layout.tsx            # Root layout with header and footer
+│   ├── globals.css           # Global styles
+│   ├── product/[id]/page.tsx # Product detail page (dynamic route)
+│   └── cart/page.tsx         # Shopping cart page
 ├── components/
-│   ├── Header.tsx
-│   ├── Footer.tsx
-│   ├── Sidebar.tsx
-│   ├── ProductGrid.tsx
-│   ├── ProductCard.tsx
-│   └── ProductDetail.tsx
+│   ├── Header.tsx            # Navigation with search and cart
+│   ├── Footer.tsx            # Footer with links and social icons
+│   ├── Sidebar.tsx           # Category and price filters
+│   ├── ProductGrid.tsx       # Responsive product grid
+│   ├── ProductCard.tsx       # Individual product card
+│   └── ProductDetail.tsx     # Product detail view
 ├── context/
-│   └── CartContext.tsx       # Cart state management
+│   └── CartContext.tsx       # Cart state management with localStorage
 └── data/
     └── products.ts           # Product data
 ```
+
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Home page with product listing, filters, and search |
+| `/product/[id]` | Product detail page with full info and add to cart |
+| `/cart` | Shopping cart with quantity controls and order summary |
