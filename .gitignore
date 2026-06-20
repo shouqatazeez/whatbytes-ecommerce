@@ -36,10 +36,8 @@ yarn-error.log*
 # vercel
 .vercel
 
-# misc config
-AGENTS.md
-CLAUDE.md
-.kiro/
+#cscode
+.vscode
 
 # typescript
 *.tsbuildinfo

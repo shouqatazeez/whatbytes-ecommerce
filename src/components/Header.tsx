@@ -28,7 +28,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-[#0458A8] text-white">
+    <header className="bg-[#0458A8] text-white sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between gap-6">
         <Link href="/" className="text-3xl font-bold shrink-0">
           Logo
